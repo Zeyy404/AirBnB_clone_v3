@@ -4,6 +4,7 @@ City view API
 """
 from flask import Flask, jsonify, request, abort
 from models import storage
+from models.state import State
 from models.city import City
 from . import app_views
 
