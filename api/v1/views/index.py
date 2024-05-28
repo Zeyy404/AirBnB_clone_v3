@@ -2,15 +2,21 @@
 """Index module"""
 from flask import jsonify
 from . import app_views
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 from models import storage
 
 object_classes = [
-        ("amenities", "Amenity"),
-        ("cities", "City"),
-        ("places", "Place"),
-        ("reviews", "Review"),
-        ("states", "State"),
-        ("users", "User")
+        ("amenities", Amenity),
+        ("cities", City),
+        ("places", Place),
+        ("reviews", Review),
+        ("states", State),
+        ("users", User)
 ]
 
 
