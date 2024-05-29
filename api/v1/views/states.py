@@ -41,7 +41,7 @@ def create_state():
     """Creates a State"""
     if not request.json:
         abort(400, description="Not a JSON")
-    if 'name' not in request.json:
+    if 'name' not in request.is_json:
         abort(400, description="Missing name")
     data = request.get_json()
     new_state = State(**data)
@@ -56,7 +56,7 @@ def update_state(state_id):
     state = storage.get(State, state_id)
     if not state:
         abort(404)
-    if not request.json:
+    if not request.is_json:
         abort(400, description="Not a JSON")
     data = request.get_json()
     for key, value in data.items():
